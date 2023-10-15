@@ -18,6 +18,7 @@ public class Booking {
     @JoinColumn(name = "show_id")
     private Show show;
 
+    @OneToMany
     private List<Seat> seats;
 
     public Long getBookingId() {

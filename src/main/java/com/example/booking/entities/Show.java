@@ -3,6 +3,7 @@ package com.example.booking.entities;
 
 import jakarta.persistence.*;
 
+import java.time.LocalDate;
 import java.util.Date;
 import java.util.List;
 
@@ -13,8 +14,8 @@ public class Show {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long showId;
 
-    private Date startTime;
-    private Date endTime;
+    private LocalDate startTime;
+    private LocalDate endTime;
 
     @ManyToOne
     @JoinColumn(name = "movie_id")
@@ -35,19 +36,19 @@ public class Show {
         this.showId = showId;
     }
 
-    public Date getStartTime() {
+    public LocalDate getStartTime() {
         return startTime;
     }
 
-    public void setStartTime(Date startTime) {
+    public void setStartTime(LocalDate startTime) {
         this.startTime = startTime;
     }
 
-    public Date getEndTime() {
+    public LocalDate getEndTime() {
         return endTime;
     }
 
-    public void setEndTime(Date endTime) {
+    public void setEndTime(LocalDate endTime) {
         this.endTime = endTime;
     }
 

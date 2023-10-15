@@ -7,5 +7,5 @@ import java.util.List;
 
 public interface ShowRepository extends JpaRepository<Show, Long> {
 
-    List<Show> findByMovieIdAndStartTimeGreaterThanEqual(Long movieId, LocalDate date);
+    List<Show> findByMovieMovieIdAndStartTimeGreaterThanEqual(Long movieId, LocalDate date);
 }

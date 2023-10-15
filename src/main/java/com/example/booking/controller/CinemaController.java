@@ -3,9 +3,7 @@ package com.example.booking.controller;
 import com.example.booking.entities.Cinema;
 import com.example.booking.service.CinemaService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -16,6 +14,10 @@ public class CinemaController {
 
     @GetMapping("/cinemas/running-shows/{movieId}/{date}")
     public List<Cinema> getCinemasRunningShows(@PathVariable Long movieId, @PathVariable String date) {
+        return cinemaService.getTheatersRunningShows(movieId, date);
+    }
+    @GetMapping("/cinemas/running-shows/")
+    public List<Cinema> getCinemasRunningShows1(@RequestHeader(name ="movieId" ) Long movieId, @RequestHeader(name ="date" ) String date) {
         return cinemaService.getTheatersRunningShows(movieId, date);
     }
 

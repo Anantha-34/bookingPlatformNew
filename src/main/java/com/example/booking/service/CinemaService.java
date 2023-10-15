@@ -20,7 +20,8 @@ public class CinemaService {
     private ShowRepository showRepository;
 
     public List<Cinema> getTheatersRunningShows(Long movieId, String date) {
-        List<Show> shows = showRepository.findByMovieIdAndStartTimeGreaterThanEqual(movieId, LocalDate.parse(date));
+        LocalDate date1 = LocalDate.parse(date);
+        List<Show> shows = showRepository.findByMovieMovieIdAndStartTimeGreaterThanEqual(movieId,date1);
 
         List<Cinema> theaters = new ArrayList<>();
         for (Show show : shows) {
